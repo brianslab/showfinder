@@ -10,8 +10,6 @@ const searchTMDB = async () => {
     params: {},
   });
 
-  console.log(response);
-
   return response;
 };
 
