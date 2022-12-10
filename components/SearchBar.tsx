@@ -1,15 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function SearchBar({ onSubmit }) {
+interface SearchBarProps {
+  onSubmit: (value: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   const [term, setTerm] = useState('');
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     onSubmit(term);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTerm(event.target.value);
   };
 
@@ -20,6 +24,6 @@ function SearchBar({ onSubmit }) {
       </form>
     </div>
   );
-}
+};
 
 export default SearchBar;
