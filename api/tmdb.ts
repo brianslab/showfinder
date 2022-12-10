@@ -7,7 +7,7 @@ const searchTMDB = async (term: string) => {
     'https://api.themoviedb.org/3/search/multi',
     {
       headers: {
-        Authorization: `Bearer ${tmdbKey.v3}`,
+        Authorization: `Bearer ${tmdbKey.v4}`,
       },
       params: { query: term },
     }
