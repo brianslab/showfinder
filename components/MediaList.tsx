@@ -10,7 +10,7 @@ const MediaList: React.FC<MediaListProps> = ({ media }) => {
     let exists = medium.poster_path ? '' : 'hidden';
 
     return (
-      <div key={medium.id} className={`${exists}`}>
+      <div key={medium.id} className={exists}>
         <MediaPosterShow title={medium.original_name} poster={poster} />
         <div className='text-center text-white italic'>
           {medium.name || medium.title}
