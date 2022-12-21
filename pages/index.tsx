@@ -15,9 +15,13 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-      <div>
+      <h1 className='text-3xl text-white font-bold font-mono flex place-content-center'>
+        Show Finder
+      </h1>
+      <div className='flex place-content-center'>
         <SearchBar onSubmit={handleSubmit} />
+      </div>
+      <div className='flex place-content-center'>
         <MediaList media={media} />
       </div>
     </div>

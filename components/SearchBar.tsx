@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface SearchBarProps {
   onSubmit: (value: string) => void;
@@ -20,7 +20,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <input value={term} onChange={handleChange} />
+        <input
+          value={term}
+          onChange={handleChange}
+          className='border-4 rounded border-red-900 focus:border-transparent focus:ring focus:ring-violet-300'
+        />
       </form>
     </div>
   );
