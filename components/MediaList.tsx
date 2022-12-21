@@ -19,7 +19,7 @@ const MediaList: React.FC<MediaListProps> = ({ media }) => {
     );
   });
 
-  return <div className='columns-5'>{renderedMedia}</div>;
+  return <div className='m-10 grid grid-cols-5 gap-10'>{renderedMedia}</div>;
 };
 
 export default MediaList;
