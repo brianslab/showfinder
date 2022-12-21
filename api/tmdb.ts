@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { tmdbKey } from './keys';
 
-const searchTMDB = async (term: string) => {
+const searchTMDB = async (term: string): Promise<Array<Object>> => {
   const response = await axios.get(
     'https://api.themoviedb.org/3/search/multi',
     {
@@ -13,7 +13,7 @@ const searchTMDB = async (term: string) => {
     }
   );
 
-  return response;
+  return response.data.results;
 };
 
 export default searchTMDB;
