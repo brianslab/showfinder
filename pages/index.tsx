@@ -9,7 +9,7 @@ export default function Home() {
 
   const handleSubmit = async (term: string) => {
     const result: Array<Object> = await searchTMDB(term);
-    console.log(result);
+
     setMedia(result);
   };
 
