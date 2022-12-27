@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import SearchBar from '../components/SearchBar';
 import MediaList from '../components/MediaList';
-import searchTMDB from '../api/tmdb';
+import searchTMDB from '../utils/tmdb';
 
 export default function Home() {
   const [media, setMedia] = useState([{}]);
@@ -18,6 +18,9 @@ export default function Home() {
       <h1 className='text-3xl text-white font-bold font-mono flex place-content-center'>
         Show Finder
       </h1>
+      <h3 className='text-3xl text-white font-bold font-mono flex place-content-center'>
+        Search for one of your favorite shows
+      </h3>
       <div className='flex place-content-center'>
         <SearchBar onSubmit={handleSubmit} />
       </div>
