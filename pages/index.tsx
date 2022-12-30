@@ -2,14 +2,20 @@ import { useState } from 'react';
 
 import SearchBar from '../components/SearchBar';
 import MediaList from '../components/MediaList';
-import searchTMDB from '../utils/tmdb';
+import searchTMDB from './api/tmdb';
+import axios from 'axios';
 
 export default function Home() {
   const [media, setMedia] = useState([{}]);
 
   const handleSubmit = async (term: string) => {
-    const result: Array<Object> = await searchTMDB(term);
+    const response = await fetch('/api/tmdb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ term }),
+    });
 
+    const result = await response.json();
     setMedia(result);
   };
 
