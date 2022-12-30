@@ -22,7 +22,15 @@ export default function Home() {
       <h1 className='text-3xl text-white font-bold font-mono flex place-content-center'>
         Show Finder
       </h1>
-      <h3 className='text-3xl text-white font-bold font-mono flex place-content-center'>
+      <div className='text-white font-bold font-mono flex place-content-center'>
+        powered by
+        <div className='w-10 h-10'>
+          <a href='https://www.themoviedb.org/' target='_blank'>
+            <img src='tmdb.svg' alt='tmdb' />
+          </a>
+        </div>
+      </div>
+      <h3 className='text-2xl text-white font-bold font-mono flex place-content-center'>
         Search for one of your favorite shows
       </h3>
       <div className='flex place-content-center'>
