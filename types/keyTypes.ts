@@ -1,7 +1,7 @@
-export type tmdbKeyType = {
+export interface tmdbKeyType {
   v3: string | undefined;
   v4: string | undefined;
-};
+}
 
 export interface keysType {
   tmdbKey: tmdbKeyType;
