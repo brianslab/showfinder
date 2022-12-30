@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import SearchBar from '../components/SearchBar';
 import MediaList from '../components/MediaList';
-import searchTMDB from './api/tmdb';
-import axios from 'axios';
 
 export default function Home() {
   const [media, setMedia] = useState([{}]);
