@@ -12,7 +12,7 @@ const searchTMDB = async (term: string): Promise<Array<Object>> => {
       params: { query: term },
     }
   );
-  console.log(process.env.NEXT_PUBLIC_NODE_ENV);
+
   return response.data.results;
 };
 
