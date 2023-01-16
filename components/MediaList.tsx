@@ -13,7 +13,8 @@ const MediaList: React.FC<MediaListProps> = ({ media }) => {
       <div key={medium.id} className={exists}>
         <MediaPosterShow title={medium.original_name} poster={poster} />
         <div className='text-center text-white italic'>
-          {medium.name || medium.title}
+          {medium.name || medium.title} |{' '}
+          {medium.first_air_date || medium.release_date}
         </div>
       </div>
     );
