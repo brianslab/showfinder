@@ -6,8 +6,8 @@ import MediaList from '../components/MediaList';
 export default function Home() {
   const [media, setMedia] = useState([{}]);
 
-  const handleSubmit = async (term: string) => {
-    const response = await fetch(`/api/tmdb?term=${term}`, {
+  const handleSubmit = async (title: string) => {
+    const response = await fetch(`/api/tmdb?search=${title}`, {
       method: 'GET',
     });
 
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
       </div>
       <h3 className='text-2xl text-white font-bold font-mono flex place-content-center'>
-        Search for one of your favorite shows
+        Search for one of your favorite shows or movies
       </h3>
       <div className='flex place-content-center'>
         <SearchBar onSubmit={handleSubmit} />
