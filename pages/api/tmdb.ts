@@ -8,7 +8,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     headers: {
       Authorization: `Bearer ${keys.tmdbKey.v4}`,
     },
-    params: { query: req.body.term },
+    params: { query: req.query.term },
   });
 
   res.json(response.data.results);
