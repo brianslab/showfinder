@@ -7,10 +7,8 @@ export default function Home() {
   const [media, setMedia] = useState([{}]);
 
   const handleSubmit = async (term: string) => {
-    const response = await fetch('/api/tmdb', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ term }),
+    const response = await fetch(`/api/tmdb?term=${term}`, {
+      method: 'GET',
     });
 
     const result = await response.json();
