@@ -24,5 +24,3 @@ const mediaApi = createApi({
 
 export const { useGetMediaByTitleQuery } = mediaApi;
 export { mediaApi };
-// export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi;
-// export { albumsApi };
