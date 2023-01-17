@@ -1,15 +1,6 @@
-import { useState } from 'react';
-
-import SearchBar from '../components/SearchBar';
-import MediaList from '../components/MediaList';
+import ShowFinder from '../components/ShowFinder';
 
 export default function Home() {
-  const [query, setQuery] = useState('');
-
-  const handleSubmit = async (title: string) => {
-    setQuery(title);
-  };
-
   return (
     <div>
       <h1 className='text-3xl text-white font-bold font-mono flex place-content-center'>
@@ -23,15 +14,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <h3 className='text-2xl text-white font-bold font-mono flex place-content-center'>
-        Search for one of your favorite shows or movies
-      </h3>
-      <div className='flex place-content-center'>
-        <SearchBar onSubmit={handleSubmit} />
-      </div>
-      <div className='flex place-content-center'>
-        <MediaList query={query} />
-      </div>
+      <ShowFinder />
     </div>
   );
 }
