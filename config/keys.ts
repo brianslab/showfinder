@@ -6,9 +6,9 @@ if (
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ||
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview'
 ) {
-  tmdbKey = require('./prod').tmdbKey;
+  tmdbKey = require('./prod.ts').tmdbKey;
 } else {
-  tmdbKey = require('./dev').tmdbKey;
+  tmdbKey = require('./dev.ts').tmdbKey;
 }
 
 export const keys: keysType = {
