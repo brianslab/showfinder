@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import classNames from 'classnames';
 
 import SearchBar from '../components/SearchBar';
 import MediaList from '../components/MediaList';
 import { useGetMediaByTitleQuery } from '../store';
+import Button from './Button';
 
 export default function ShowFinder() {
   const [query, setQuery] = useState('');
@@ -37,9 +37,23 @@ export default function ShowFinder() {
     return (
       <div className='text-2xl text-white font-bold font-mono flex place-content-center'>
         Error searching for: {query}
+        <div className='flex place-content-center'>
+          <Button primary={true} onClick={() => setQuery('')}>
+            reset
+          </Button>
+        </div>
       </div>
     );
   }
 
-  return <MediaList media={data} />;
+  return (
+    <div>
+      <div className='flex place-content-center'>
+        <Button primary={true} onClick={() => setQuery('')}>
+          reset
+        </Button>
+      </div>
+      <MediaList media={data} />
+    </div>
+  );
 }
