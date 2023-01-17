@@ -1,3 +1,5 @@
+import Button from './Button';
+
 interface MediaPosterShowProps {
   poster: string;
   title: string;
@@ -5,9 +7,9 @@ interface MediaPosterShowProps {
 
 const MediaPosterShow: React.FC<MediaPosterShowProps> = ({ poster, title }) => {
   return (
-    <div>
+    <Button bordered={false}>
       <img src={poster} alt={title} />
-    </div>
+    </Button>
   );
 };
 
