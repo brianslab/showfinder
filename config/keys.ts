@@ -2,8 +2,8 @@ import { keysType, tmdbKeyType } from '../types/keyTypes';
 
 let tmdbKey: tmdbKeyType;
 const ON_VERCEL =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ||
-  process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
+  process.env.NEXT_PUBLIC_VERCEL_ENV?.toLowerCase() === 'production' ||
+  process.env.NEXT_PUBLIC_VERCEL_ENV?.toLowerCase() === 'preview';
 
 if (ON_VERCEL) {
   tmdbKey = require('./prod').tmdbKey;
