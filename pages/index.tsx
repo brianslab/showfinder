@@ -4,15 +4,10 @@ import SearchBar from '../components/SearchBar';
 import MediaList from '../components/MediaList';
 
 export default function Home() {
-  const [media, setMedia] = useState([{}]);
+  const [query, setQuery] = useState('');
 
   const handleSubmit = async (title: string) => {
-    const response = await fetch(`/api/tmdb?search=${title}`, {
-      method: 'GET',
-    });
-
-    const result = await response.json();
-    setMedia(result);
+    setQuery(title);
   };
 
   return (
@@ -35,7 +30,7 @@ export default function Home() {
         <SearchBar onSubmit={handleSubmit} />
       </div>
       <div className='flex place-content-center'>
-        <MediaList media={media} />
+        <MediaList query={query} />
       </div>
     </div>
   );
