@@ -1,11 +1,34 @@
 import MediaPosterShow from './MediaPosterShow';
+import { useGetMediaByTitleQuery } from '../store';
 
 interface MediaListProps {
-  media: any;
+  query: string;
 }
 
-const MediaList: React.FC<MediaListProps> = ({ media }) => {
-  const renderedMedia = media.map((medium: any) => {
+const MediaList: React.FC<MediaListProps> = ({ query }) => {
+  const { data, error, isLoading } = useGetMediaByTitleQuery(query);
+
+  if (!query) {
+    return <div />;
+  }
+
+  if (isLoading) {
+    return (
+      <div className='text-2xl text-white font-bold font-mono flex place-content-center'>
+        Loading...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className='text-2xl text-white font-bold font-mono flex place-content-center'>
+        Error searching for: {query}
+      </div>
+    );
+  }
+
+  const renderedMedia = data.map((medium: any) => {
     const poster = `https://image.tmdb.org/t/p/w500/${medium.poster_path}`;
     const exists = medium.poster_path ? '' : 'hidden';
 
