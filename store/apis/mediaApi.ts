@@ -10,7 +10,7 @@ const mediaApi = createApi({
       getMediaByTitle: build.query({
         query: (title) => {
           return {
-            url: '/tmdb',
+            url: '/tmdb/search_by_title',
             params: {
               search: title,
             },
