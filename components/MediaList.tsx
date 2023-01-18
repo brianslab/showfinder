@@ -12,7 +12,12 @@ const MediaList: React.FC<MediaListProps> = ({ media }) => {
 
     return (
       <div key={medium.id} className={exists}>
-        <MediaPosterShow title={medium.name} poster={poster} id={medium.id} />
+        <MediaPosterShow
+          id={medium.id}
+          type={medium.type}
+          title={medium.name}
+          poster={poster}
+        />
         <div className='text-center text-white italic'>
           <p>{medium.name}</p>
           <p>{medium.date}</p>

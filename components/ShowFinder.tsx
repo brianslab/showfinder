@@ -7,6 +7,7 @@ import Button from './Button';
 
 export interface media {
   id: number;
+  type: string;
   poster_path: string;
   name: string;
   date: string;
@@ -59,6 +60,7 @@ export default function ShowFinder() {
     data.map((medium: any) => {
       media.push({
         id: medium.id,
+        type: medium.media_type,
         poster_path: medium.poster_path,
         name: medium.media_type === 'tv' ? medium.name : medium.title,
         date:

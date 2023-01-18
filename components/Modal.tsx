@@ -13,7 +13,13 @@ import { useEffect } from 'react';
 //   };
 // }, []);
 
-function Modal({ onClose, children, actionBar }) {
+interface ModalProps {
+  onClose: any;
+  children: any;
+  actionBar: any;
+}
+
+function Modal({ onClose, children, actionBar }: ModalProps) {
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
 
